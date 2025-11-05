@@ -34,3 +34,18 @@ student["marks"] = [98, 76, 90, 94, 100]
 print(student["marks"])
 
 print(student["marks"][4])
+
+#Nested dictionary
+classroom = {
+    "Pahi":{
+        "age" : 11,
+        "hobby" : "Dance"
+    },
+
+    "Ankitha":{
+        "age" : 12,
+        "hobby" : "Basketball"
+    }
+}
+print(classroom.keys())
+print(classroom.values())
