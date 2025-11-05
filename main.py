@@ -1,51 +1,28 @@
-student = {
-    'name': 'Pahi',
-    'age': 11,
-    'hobby': "Dance",
-}
+import pgzrun
+from random import randint
 
-print(student)
-print(student.keys())
-print(student.values())
+WIDTH = 300
+HEIGHT = 300
+TITLE = "SCREEN"
 
-#Accessing values with keys
-print(student["age"])
-print(student["hobby"])
+#Draw function - inbuilt function gets called itself; helps to render animations/shapes/texts
+def draw():
+    screen.fill("black")
+    width = WIDTH
+    height = HEIGHT - 200
+    r = 255
+    g = 0
+    b = randint(120,255)
 
-for i in student.keys():
-    print(i," : ",student[i])
+    for i in range(20):
+        myrect = Rect((0,0), (width,height))
+        myrect.center = 150,150
+        screen.draw.rect(myrect,(r,g,b))
+        
+        width = width - 10
+        height = height + 10
 
-if "marks" in student:
-    print("Key exists")
-else:
-    print("Key does not exist")
-
-student["favorite food"] = "dosa"
-print(student)
-
-del(student["hobby"])
-print(student)
-
-food = input("What is your favorite food : ")
-student["favorite food"] = food
-print(student)
-
-student["marks"] = [98, 76, 90, 94, 100]
-print(student["marks"])
-
-print(student["marks"][4])
-
-#Nested dictionary
-classroom = {
-    "Pahi":{
-        "age" : 11,
-        "hobby" : "Dance"
-    },
-
-    "Ankitha":{
-        "age" : 12,
-        "hobby" : "Basketball"
-    }
-}
-print(classroom.keys())
-print(classroom.values())
+        r = r - 10
+        g = g + 10
+        
+pgzrun.go()
